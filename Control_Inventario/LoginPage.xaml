@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Control_Inventario.LoginPage"
+             Title="Inicio de Sesión"
+             BackgroundColor="#F5F5F5">
+
+    <ContentPage.Content>
+        <StackLayout Padding="30" VerticalOptions="Center">
+
+            <Label Text="Control de Inventarios"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#333" />
+
+            <Label Text="Inicia sesión para continuar"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   TextColor="#666"
+                   Margin="0,5,0,20" />
+
+            <Label Text="Usuario" TextColor="#444" FontSize="14"/>
+            <Entry x:Name="entryUsuario"
+                   Placeholder="Ingrese su usuario"
+                   Keyboard="Default"
+                   BackgroundColor="White"
+                   TextColor="#000"
+                   Margin="0,0,0,10" />
+
+            <Label Text="Contraseña" TextColor="#444" FontSize="14"/>
+            <Entry x:Name="entryPassword"
+                   Placeholder="Ingrese su contraseña"
+                   IsPassword="True"
+                   BackgroundColor="White"
+                   TextColor="#000"
+                   Margin="0,0,0,20" />
+
+            <Button Text="Iniciar Sesión"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    CornerRadius="8"
+                    HeightRequest="45"
+                    Clicked="OnLoginClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

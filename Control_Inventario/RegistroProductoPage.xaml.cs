@@ -1,51 +1,129 @@
-﻿using Control_Inventario.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Control_Inventario.Models;
 
 namespace Control_Inventario
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistroProductoPage : ContentPage
     {
-        private readonly System.Collections.ObjectModel.ObservableCollection<Producto> _productos;
+        private Producto productoExistente;
 
-        public RegistroProductoPage(System.Collections.ObjectModel.ObservableCollection<Producto> productos)
+        public RegistroProductoPage(Producto producto = null)
         {
             InitializeComponent();
-            _productos = productos;
+
+            productoExistente = producto;
+
+            if (productoExistente != null)
+            {
+                // Cargar valores para edición
+                NombreEntry.Text = productoExistente.Nombre;
+                CantidadEntry.Text = productoExistente.Cantidad.ToString();
+                ProveedorEntry.Text = productoExistente.Proveedor;
+                DescripcionEntry.Text = productoExistente.Descripcion;
+                PrecioEntry.Text = productoExistente.PrecioUnitario.ToString();
+                CategoriaEntry.Text = productoExistente.Categoria;
+                FechaIngresoPicker.Date = productoExistente.FechaIngreso == default ? DateTime.Now : productoExistente.FechaIngreso;
+                UbicacionEntry.Text = productoExistente.Ubicacion;
+                StockMinimoEntry.Text = productoExistente.StockMinimo.ToString();
+            }
+            else
+            {
+                FechaIngresoPicker.Date = DateTime.Now;
+            }
         }
 
-        private async void OnGuardarClicked(object sender, EventArgs e)
+        private async void OnGuardarProducto(object sender, EventArgs e)
         {
-            // Validacion de campos
-            if (string.IsNullOrWhiteSpace(entryId.Text) ||
-                string.IsNullOrWhiteSpace(entryNombre.Text) ||
-                string.IsNullOrWhiteSpace(entryCantidad.Text) ||
-                string.IsNullOrWhiteSpace(entryProveedor.Text))
+            // Validación básica
+            if (string.IsNullOrWhiteSpace(NombreEntry.Text))
             {
-                await DisplayAlert("Error", "Todos los campos son obligatorios", "OK");
+                await DisplayAlert("Error", "El nombre es obligatorio.", "OK");
                 return;
             }
 
-            // Crear nuevo producto
-            var nuevoProducto = new Producto
+            if (!int.TryParse(CantidadEntry.Text, out int cantidad))
             {
-                Id = int.Parse(entryId.Text),
-                Nombre = entryNombre.Text,
-                Cantidad = int.Parse(entryCantidad.Text),
-                Proveedor = entryProveedor.Text
-            };
+                await DisplayAlert("Error", "Cantidad inválida.", "OK");
+                return;
+            }
 
-            _productos.Add(nuevoProducto);
+            if (!double.TryParse(PrecioEntry.Text, out double precio))
+            {
+                precio = 0;
+            }
 
-            await DisplayAlert("Éxito", "Producto agregado correctamente", "OK");
-            await Navigation.PopAsync(); // Volver a la página anterior
+            if (!int.TryParse(StockMinimoEntry.Text, out int stockMin))
+            {
+                stockMin = 0;
+            }
+
+            if (productoExistente == null)
+            {
+                var nuevo = new Producto
+                {
+                    Nombre = NombreEntry.Text.Trim(),
+                    Cantidad = cantidad,
+                    Proveedor = ProveedorEntry.Text?.Trim(),
+                    Descripcion = DescripcionEntry.Text?.Trim(),
+                    PrecioUnitario = precio,
+                    Categoria = CategoriaEntry.Text?.Trim(),
+                    FechaIngreso = FechaIngresoPicker.Date,
+                    Ubicacion = UbicacionEntry.Text?.Trim(),
+                    StockMinimo = stockMin
+                };
+
+                try
+                {
+                    if (App.Database != null)
+                    {
+                        await App.Database.SaveProductoAsync(nuevo); // asigna Id automáticamente
+                    }
+                }
+                catch
+                {
+                    // no bloqueamos la app por errores de BD
+                }
+
+                // Añadir a la colección en memoria
+                if (!Inventario.Productos.Contains(nuevo))
+                    Inventario.Productos.Add(nuevo);
+            }
+            else
+            {
+                // Actualizar valores
+                productoExistente.Nombre = NombreEntry.Text.Trim();
+                productoExistente.Cantidad = cantidad;
+                productoExistente.Proveedor = ProveedorEntry.Text?.Trim();
+                productoExistente.Descripcion = DescripcionEntry.Text?.Trim();
+                productoExistente.PrecioUnitario = precio;
+                productoExistente.Categoria = CategoriaEntry.Text?.Trim();
+                productoExistente.FechaIngreso = FechaIngresoPicker.Date;
+                productoExistente.Ubicacion = UbicacionEntry.Text?.Trim();
+                productoExistente.StockMinimo = stockMin;
+
+                try
+                {
+                    if (App.Database != null)
+                    {
+                        await App.Database.SaveProductoAsync(productoExistente);
+                    }
+                }
+                catch
+                {
+                    // ignorar error de BD aquí, pero no cerrar la app
+                }
+
+                // Forzar actualización en la ObservableCollection (si hace falta)
+                var idx = Inventario.Productos.IndexOf(productoExistente);
+                if (idx >= 0)
+                {
+                    // Reemplazar para forzar que la UI refresque (si es necesario)
+                    Inventario.Productos[idx] = productoExistente;
+                }
+            }
+
+            await Navigation.PopAsync();
         }
     }
 }

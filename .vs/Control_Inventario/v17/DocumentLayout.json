@@ -1,7 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\wande\\source\\repos\\Control_Inventario\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD030FF-AE3B-4CAE-99FE-F021FB959284}|Control_Inventario\\Control_Inventario.csproj|c:\\users\\wande\\source\\repos\\app-control-inventario\\control_inventario\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD030FF-AE3B-4CAE-99FE-F021FB959284}|Control_Inventario\\Control_Inventario.csproj|solutionrelative:control_inventario\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD030FF-AE3B-4CAE-99FE-F021FB959284}|Control_Inventario\\Control_Inventario.csproj|c:\\users\\wande\\source\\repos\\app-control-inventario\\control_inventario\\inventario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD030FF-AE3B-4CAE-99FE-F021FB959284}|Control_Inventario\\Control_Inventario.csproj|solutionrelative:control_inventario\\inventario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD030FF-AE3B-4CAE-99FE-F021FB959284}|Control_Inventario\\Control_Inventario.csproj|c:\\users\\wande\\source\\repos\\app-control-inventario\\control_inventario\\detalleproductopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFD030FF-AE3B-4CAE-99FE-F021FB959284}|Control_Inventario\\Control_Inventario.csproj|solutionrelative:control_inventario\\detalleproductopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD030FF-AE3B-4CAE-99FE-F021FB959284}|Control_Inventario\\Control_Inventario.csproj|c:\\users\\wande\\source\\repos\\app-control-inventario\\control_inventario\\inventario.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{EFD030FF-AE3B-4CAE-99FE-F021FB959284}|Control_Inventario\\Control_Inventario.csproj|solutionrelative:control_inventario\\inventario.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,11 +26,60 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "Control_Inventario\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\LoginPage.xaml.cs",
+              "RelativeToolTip": "Control_Inventario\\LoginPage.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T15:41:23.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DetalleProductoPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\DetalleProductoPage.xaml.cs",
+              "RelativeDocumentMoniker": "Control_Inventario\\DetalleProductoPage.xaml.cs",
+              "ToolTip": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\DetalleProductoPage.xaml.cs",
+              "RelativeToolTip": "Control_Inventario\\DetalleProductoPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T15:41:19.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Inventario.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\Inventario.xaml.cs",
+              "RelativeDocumentMoniker": "Control_Inventario\\Inventario.xaml.cs",
+              "ToolTip": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\Inventario.xaml.cs",
+              "RelativeToolTip": "Control_Inventario\\Inventario.xaml.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T15:21:09.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Inventario.xaml",
+              "DocumentMoniker": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\Inventario.xaml",
+              "RelativeDocumentMoniker": "Control_Inventario\\Inventario.xaml",
+              "ToolTip": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\Inventario.xaml",
+              "RelativeToolTip": "Control_Inventario\\Inventario.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-12T15:21:03.107Z"
             }
           ]
         }

@@ -25,11 +25,11 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
-_nugetassetstimestamp=638904424908640251
+_nugetassetstimestamp=638905907447191776
 typemapkind=strings-asm
 androidsupportedabis=arm64-v8a
 armeabi-v7a
 x86
 x86_64
 androidmanifestplaceholders=
-projectfullpath=c:\users\wande\source\repos\control_inventario\control_inventario.android\control_inventario.android.csproj
+projectfullpath=c:\users\wande\source\repos\app-control-inventario\control_inventario.android\control_inventario.android.csproj

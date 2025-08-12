@@ -2,46 +2,68 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Control_Inventario.Inventario"
-             Title="Inventario"
-             BackgroundColor="#F5F5F5">
-    <ContentPage.Content>
-        <StackLayout Padding="10">
+             Title="Inventario">
+    <StackLayout Padding="10" BackgroundColor="#EFEFEF">
+        <Label Text="Productos en Stock"
+           FontSize="20"
+           FontAttributes="Bold"
+           HorizontalOptions="Center" />
 
-            <!-- Título -->
-            <Label Text="Productos en Stock"
-                   FontSize="22"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   TextColor="#333"
-                   Margin="0,0,0,10" />
+        <CollectionView x:Name="ProductosCollection"
+                    SelectionMode="Single"
+                    SelectionChanged="OnProductoSelected"
+                    Margin="0,10,0,0">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="8" Padding="10" Margin="0,0,0,10" BackgroundColor="White" HasShadow="True">
+                    <StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
 
-            <!-- Lista de productos -->
-            <ListView x:Name="listaProductos"
-                      HasUnevenRows="True"
-                      SeparatorColor="#ccc"
-                      BackgroundColor="White">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="10">
-                                <Label Text="{Binding Nombre}" FontSize="18" TextColor="#000"/>
-                                <Label Text="{Binding Categoria}" FontSize="14" TextColor="#666"/>
-                                <Label Text="{Binding Cantidad, StringFormat='Cantidad: {0}'}" FontSize="14" TextColor="#444"/>
-                                <Label Text="{Binding Precio, StringFormat='Precio: ${0:F2}'}" FontSize="14" TextColor="#444"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                <StackLayout Grid.Column="0" VerticalOptions="Center">
+                                    <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="16"/>
+                                    <Label Text="{Binding Cantidad, StringFormat='Cantidad: {0}'}" FontSize="12"/>
+                                    <Label Text="{Binding Proveedor, StringFormat='Proveedor: {0}'}" FontSize="12"/>
+                                </StackLayout>
 
-            <Button Text="Agregar Producto"
-                    BackgroundColor="#4CAF50"
-                    TextColor="White"
-                    CornerRadius="8"
-                    HeightRequest="45"
-                    Margin="0,10,0,0"
-                    Clicked="OnAgregarProductoClicked" />
+                                <Button Grid.Column="1"
+                                        Text="✏️"
+                                        FontSize="18"
+                                        BackgroundColor="Transparent"
+                                        BorderWidth="0"
+                                        WidthRequest="44"
+                                        HeightRequest="44"
+                                        Clicked="OnEditarProducto" />
 
-        </StackLayout>
-    </ContentPage.Content>
+                                <Button Grid.Column="2"
+                                        Text="🗑️"
+                                        FontSize="18"
+                                        BackgroundColor="Transparent"
+                                        BorderWidth="0"
+                                        WidthRequest="44"
+                                        HeightRequest="44"
+                                        Clicked="OnEliminarProducto" />
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="AGREGAR PRODUCTO"
+            BackgroundColor="#2E8B57"
+            TextColor="White"
+            CornerRadius="8"
+            HeightRequest="48"
+            Margin="0,12,0,0"
+            Clicked="OnAgregarProducto" />
+    </StackLayout>
 </ContentPage>

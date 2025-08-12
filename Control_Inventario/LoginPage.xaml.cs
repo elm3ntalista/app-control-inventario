@@ -19,13 +19,20 @@ namespace Control_Inventario
 
         private async void OnLoginClicked(object sender, EventArgs e)
         {
-            // validación de login
             if (!string.IsNullOrWhiteSpace(entryUsuario.Text) &&
                 !string.IsNullOrWhiteSpace(entryPassword.Text))
             {
-                entryUsuario.Text = "";
-                entryPassword.Text = "";
-                await Navigation.PushAsync(new Inventario());
+                if (entryUsuario.Text.ToLower() == "admin" &&
+                    entryPassword.Text == "123")
+                {
+                    entryUsuario.Text = "";
+                    entryPassword.Text = "";
+                    await Navigation.PushAsync(new Inventario());
+                }
+                else
+                {
+                    await DisplayAlert("Alerta", "Usuario o contraseña incorrecto", "OK");
+                }
             }
             else
             {

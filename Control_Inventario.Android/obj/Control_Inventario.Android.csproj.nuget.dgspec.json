@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wande\\source\\repos\\Control_Inventario\\Control_Inventario.Android\\Control_Inventario.Android.csproj": {}
+    "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario.Android\\Control_Inventario.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wande\\source\\repos\\Control_Inventario\\Control_Inventario.Android\\Control_Inventario.Android.csproj": {
+    "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario.Android\\Control_Inventario.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wande\\source\\repos\\Control_Inventario\\Control_Inventario.Android\\Control_Inventario.Android.csproj",
+        "projectUniqueName": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario.Android\\Control_Inventario.Android.csproj",
         "projectName": "Control_Inventario.Android",
-        "projectPath": "C:\\Users\\wande\\source\\repos\\Control_Inventario\\Control_Inventario.Android\\Control_Inventario.Android.csproj",
+        "projectPath": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario.Android\\Control_Inventario.Android.csproj",
         "packagesPath": "C:\\Users\\wande\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wande\\source\\repos\\Control_Inventario\\Control_Inventario.Android\\obj\\",
+        "outputPath": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "UsingMicrosoftNETSdk": false,
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid13.0": {
             "projectReferences": {
-              "C:\\Users\\wande\\source\\repos\\Control_Inventario\\Control_Inventario\\Control_Inventario.csproj": {
-                "projectPath": "C:\\Users\\wande\\source\\repos\\Control_Inventario\\Control_Inventario\\Control_Inventario.csproj"
+              "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\Control_Inventario.csproj": {
+                "projectPath": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\Control_Inventario.csproj"
               }
             }
           }
@@ -54,19 +54,23 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[5.0.0.2196, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.9.172, )"
             }
           }
         }
       }
     },
-    "C:\\Users\\wande\\source\\repos\\Control_Inventario\\Control_Inventario\\Control_Inventario.csproj": {
+    "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\Control_Inventario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wande\\source\\repos\\Control_Inventario\\Control_Inventario\\Control_Inventario.csproj",
+        "projectUniqueName": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\Control_Inventario.csproj",
         "projectName": "Control_Inventario",
-        "projectPath": "C:\\Users\\wande\\source\\repos\\Control_Inventario\\Control_Inventario\\Control_Inventario.csproj",
+        "projectPath": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\Control_Inventario.csproj",
         "packagesPath": "C:\\Users\\wande\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wande\\source\\repos\\Control_Inventario\\Control_Inventario\\obj\\",
+        "outputPath": "C:\\Users\\wande\\source\\repos\\app-control-inventario\\Control_Inventario\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -118,6 +122,10 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[5.0.0.2196, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.9.172, )"
             }
           },
           "imports": [

@@ -2,52 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Control_Inventario.RegistroProductoPage"
-             Title="Registrar Producto"
-             BackgroundColor="#F5F5F5">
+             Title="Registrar / Editar Producto">
+    <ScrollView>
+        <StackLayout Padding="12" Spacing="10">
+            <Entry x:Name="NombreEntry" Placeholder="Nombre" />
+            <Entry x:Name="CantidadEntry" Placeholder="Cantidad" Keyboard="Numeric" />
+            <Entry x:Name="ProveedorEntry" Placeholder="Proveedor" />
+            <Editor x:Name="DescripcionEntry" Placeholder="Descripción" AutoSize="TextChanges" HeightRequest="80"/>
+            <Entry x:Name="PrecioEntry" Placeholder="Precio unitario" Keyboard="Numeric"/>
+            <Entry x:Name="CategoriaEntry" Placeholder="Categoría" />
+            <DatePicker x:Name="FechaIngresoPicker" />
+            <Entry x:Name="UbicacionEntry" Placeholder="Ubicación en almacén" />
+            <Entry x:Name="StockMinimoEntry" Placeholder="Stock mínimo" Keyboard="Numeric" />
 
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Padding="20">
-
-                <Label Text="Registrar Nuevo Producto"
-                       FontSize="22"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                       Margin="0,0,0,20"/>
-
-                <Label Text="ID:"/>
-                <Entry x:Name="entryId"
-                       Placeholder="Ingrese el ID"
-                       Keyboard="Numeric"
-                       BackgroundColor="White"
-                       Margin="0,0,0,10"/>
-
-                <Label Text="Nombre:"/>
-                <Entry x:Name="entryNombre"
-                       Placeholder="Ingrese el nombre del producto"
-                       BackgroundColor="White"
-                       Margin="0,0,0,10"/>
-
-                <Label Text="Cantidad:"/>
-                <Entry x:Name="entryCantidad"
-                       Placeholder="Ingrese la cantidad"
-                       Keyboard="Numeric"
-                       BackgroundColor="White"
-                       Margin="0,0,0,10"/>
-
-                <Label Text="Proveedor:"/>
-                <Entry x:Name="entryProveedor"
-                       Placeholder="Ingrese el proveedor"
-                       BackgroundColor="White"
-                       Margin="0,0,0,20"/>
-
-                <Button Text="Guardar Producto"
-                        BackgroundColor="#4CAF50"
-                        TextColor="White"
-                        CornerRadius="8"
-                        HeightRequest="45"
-                        Clicked="OnGuardarClicked"/>
-            </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+            <Button Text="Guardar" BackgroundColor="#2E8B57" TextColor="White" Clicked="OnGuardarProducto" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -65,5 +65,13 @@
             HeightRequest="48"
             Margin="0,12,0,0"
             Clicked="OnAgregarProducto" />
+        <Button Text="VER PROVEEDORES"
+        BackgroundColor="#4682B4"
+        TextColor="White"
+        CornerRadius="8"
+        HeightRequest="48"
+        Margin="0,12,0,0"
+        Clicked="OnVerProveedores" />
+
     </StackLayout>
 </ContentPage>

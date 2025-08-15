@@ -14,8 +14,6 @@ namespace Control_Inventario
         {
             InitializeComponent();
 
-            // Si usas SQLite en App.Database, cargamos en OnAppearing.
-            // Si no, inicializamos con algunos ejemplos.
             if (Productos == null)
             {
                 Productos = new ObservableCollection<Producto>
@@ -43,7 +41,6 @@ namespace Control_Inventario
         {
             base.OnAppearing();
 
-            // Si tienes App.Database configurado, cargamos desde SQLite aquí:
             try
             {
                 if (App.Database != null)
@@ -56,7 +53,6 @@ namespace Control_Inventario
             }
             catch
             {
-                // Si algo falla, dejamos la lista en memoria (no queremos que la app se cierre)
             }
         }
 
@@ -73,6 +69,10 @@ namespace Control_Inventario
         private async void OnAgregarProducto(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RegistroProductoPage());
+        }
+        private async void OnVerProveedores(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProveedoresPage());
         }
 
         private async void OnEditarProducto(object sender, EventArgs e)

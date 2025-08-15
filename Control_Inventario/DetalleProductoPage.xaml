@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Control_Inventario.DetalleProductoPage"
+             Title="Detalle del Producto">
+    <ScrollView>
+        <StackLayout Padding="12" Spacing="8">
+            <Label Text="{Binding Nombre}" FontSize="20" FontAttributes="Bold" />
+            <Label Text="{Binding Descripcion, StringFormat='Descripción: {0}'}" />
+            <Label Text="{Binding Cantidad, StringFormat='Cantidad: {0}'}" />
+            <Label Text="{Binding Proveedor, StringFormat='Proveedor: {0}'}" />
+            <Label Text="{Binding PrecioUnitario, StringFormat='Precio unitario: {0:C}'}" />
+            <Label Text="{Binding Categoria, StringFormat='Categoría: {0}'}" />
+            <Label Text="{Binding FechaIngreso, StringFormat='Fecha de ingreso: {0:dd/MM/yyyy}'}" />
+            <Label Text="{Binding Ubicacion, StringFormat='Ubicación: {0}'}" />
+            <Label Text="{Binding StockMinimo, StringFormat='Stock mínimo: {0}'}" />
+            <Button Text="Cerrar" Clicked="OnCerrar" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -16,7 +16,6 @@ namespace Control_Inventario
 
             if (productoExistente != null)
             {
-                // Cargar valores para edición
                 NombreEntry.Text = productoExistente.Nombre;
                 CantidadEntry.Text = productoExistente.Cantidad.ToString();
                 ProveedorEntry.Text = productoExistente.Proveedor;
@@ -35,7 +34,6 @@ namespace Control_Inventario
 
         private async void OnGuardarProducto(object sender, EventArgs e)
         {
-            // Validación básica
             if (string.IsNullOrWhiteSpace(NombreEntry.Text))
             {
                 await DisplayAlert("Error", "El nombre es obligatorio.", "OK");
@@ -77,21 +75,19 @@ namespace Control_Inventario
                 {
                     if (App.Database != null)
                     {
-                        await App.Database.SaveProductoAsync(nuevo); // asigna Id automáticamente
+                        await App.Database.SaveProductoAsync(nuevo);
                     }
                 }
                 catch
                 {
-                    // no bloqueamos la app por errores de BD
+                    // Esto es para que no se bloquee la app por errores de BD
                 }
 
-                // Añadir a la colección en memoria
                 if (!Inventario.Productos.Contains(nuevo))
                     Inventario.Productos.Add(nuevo);
             }
             else
             {
-                // Actualizar valores
                 productoExistente.Nombre = NombreEntry.Text.Trim();
                 productoExistente.Cantidad = cantidad;
                 productoExistente.Proveedor = ProveedorEntry.Text?.Trim();
@@ -111,14 +107,12 @@ namespace Control_Inventario
                 }
                 catch
                 {
-                    // ignorar error de BD aquí, pero no cerrar la app
+                    // Esto es para que no se bloquee la app por errores de BD
                 }
 
-                // Forzar actualización en la ObservableCollection (si hace falta)
                 var idx = Inventario.Productos.IndexOf(productoExistente);
                 if (idx >= 0)
                 {
-                    // Reemplazar para forzar que la UI refresque (si es necesario)
                     Inventario.Productos[idx] = productoExistente;
                 }
             }
